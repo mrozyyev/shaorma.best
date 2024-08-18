@@ -1,0 +1,36 @@
+---
+// Footer.astro
+const links = [
+  { name: 'Home', href: '#' },
+  { name: 'Process', href: 'process' },
+  { name: 'Why us?', href: 'why-us' },
+  { name: 'FAQ', href: 'faq' }
+];
+---
+
+<footer class="p-4 md:p-8 lg:p-10 bg-[#333333]">
+  <div class="mx-auto max-w-screen-xl text-center">
+      <a href="#" class="flex items-center space-x-3 justify-center">
+        <span
+          class="self-center text-2xl font-semibold whitespace-nowrap text-white"
+        >
+          🫔 <i class="text-[#FFD700]">Shaorma</i> . <i class="text-[#D32F2F]"
+            >best</i
+          >
+        </span>
+      </a>
+    <ul class="flex flex-wrap justify-center items-center mb-6 mt-5 text-white">
+      {links.map(link => (
+        <li class="mr-4 last:mr-0">
+          <a href={link.href} class="hover:underline">
+            {link.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+      &copy; 2024 Shaorma.best All Rights Reserved.
+      built by <a target="_blank" href="https://mrozyyev.xyz">mrozyyev</a>
+    </p>
+  </div>
+</footer>

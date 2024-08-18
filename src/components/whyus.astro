@@ -1,0 +1,99 @@
+---
+const comparisonData = [
+    {
+        feature: "Turnaround time 🕓",
+        us: "6-10 days",
+        others: "2-4 months",
+    },
+    {
+        feature: "Total Cost 💵",
+        us: "$200-300",
+        others: "$1000-2000+",
+    },
+    {
+        feature: "Time commitment 🫵",
+        us: "1 hr.",
+        others: "4-5 hrs.",
+    },
+    {
+        feature: "Specialize in restaurants",
+        us: "✅ Yes",
+        others: "❌ No",
+    },
+    {
+        feature: "Website content ✍🏻",
+        us: "✅ Done for you",
+        others: "❌ Not included",
+    },
+    {
+        feature: "Website images 🌄",
+        us: "✅ Included",
+        others: "❌ Not included",
+    },
+    {
+        feature: "Update site ⚙️",
+        us: "✅ Easily do it yourself",
+        others: "❌ Need developer",
+    },
+];
+---
+
+<section id="why-us">
+    <div class="pb-16 pt-20 text-center lg:pt-32 w-full">
+        <h1
+            class="mx-auto max-w-4xl font-display text-5xl font-bold tracking-tight text-slate-900 sm:text-7xl"
+        >
+            Why
+            <span class="relative whitespace-nowrap text-[#ffd700]">
+                <span class="relative">choose us? </span>
+            </span>
+        </h1>
+        <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
+            We've built enough websites to know what works and what doesn't.
+        </p>
+        <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-600">
+            There's a reason we are the #1 choice for website design for
+            restaurants.
+        </p>
+
+        <div class="py-12 sm:py-16">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-4xl text-center">
+                    <p class="text-base sm:text-lg leading-7 text-gray-600">
+                        Compare our offerings with others in the market.
+                    </p>
+                </div>
+        
+                <div class="mt-8 sm:mt-16 overflow-hidden rounded-xl border border-gray-200">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="bg-gray-50">
+                                    <th scope="col" class="px-4 py-3  text-sm font-semibold text-gray-800 sm:px-6">Feature</th>
+                                    <th scope="col" class="px-4 py-3  font-semibold text-base text-gray-900 bg-yellow-100 sm:px-6">shaorma.best</th>
+                                    <th scope="col" class="px-4 py-3  text-sm font-base text-gray-600 sm:px-6">Others</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {comparisonData.map((item, index) => (
+                                    <tr  class={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                                        <td class="px-4 py-4  text-sm text-gray-500 sm:px-6">
+                                            {item.feature}
+                                        </td>
+                                        <td class="px-4 py-4  font-bold text-gray-900 bg-yellow-50/50 sm:px-6">
+                                            {item.us}
+                                        </td>
+                                        <td class="px-4 py-4  text-sm text-gray-500 sm:px-6">
+                                            {item.others}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
