@@ -1,0 +1,82 @@
+---
+import Cta from "../../components/cta.astro";
+import Faq from "../../components/faq.astro";
+import Faq2 from "../../components/faq2.astro";
+import Footer from "../../components/footer.astro";
+import Gallery from "../../components/gallery.astro";
+import Hero from "../../components/hero.astro";
+import Navbar from "../../components/navbar.astro";
+import Process from "../../components/process.astro";
+import Whyus from "../../components/whyus.astro";
+import Works from "../../components/works.astro";
+---
+
+<html lang="en" class="scroll-smooth ease-in-out">
+	<head>
+		<meta charset="utf-8" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="/favicon.png" />
+	
+		<!-- Viewport Settings -->
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+		<!-- Page Title -->
+		<title>Best Shaorma Restaurant Website Designs</title>
+	
+		<!-- Description -->
+		<meta name="description" content="Premium website designs for shaorma restaurants. Get a custom sales website ready in 10 days or less." />
+	
+		<!-- Keywords -->
+		<meta name="keywords" content="shaorma, restaurant website, premium website design, custom website, sales website" />
+	
+		<!-- Author -->
+		<meta name="author" content="mrozyyev" />
+	
+		<!-- Robots -->
+		<meta name="robots" content="index, follow" />
+	
+		<!-- Open Graph Meta Tags for Social Media -->
+		<meta property="og:title" content="Best Shaorma Restaurant Website Designs" />
+		<meta property="og:description" content="Premium website designs for shaorma restaurants. Get a custom sales website ready in 10 days or less." />
+		<meta property="og:image" content="/preview.webp" />
+		<meta property="og:url" content="https://www.shaorma.best" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="shaorma.best" />
+	
+		<!-- Additional Meta Tags -->
+		<meta name="generator" content={Astro.generator} />
+		<link rel="canonical" href="https://www.shaorma.best" />
+	
+		<!-- Open Graph Meta Tags for Locale -->
+		<meta property="og:locale" content="en_US" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
+		<script
+			is:inline
+			src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"
+		></script>
+		</head
+		>
+		
+		<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<Navbar />
+	<body class="bg-[#FFF5E1]">
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+			<!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
+			<div class="mx-auto max-w-3xl">
+				<Hero />
+				<Gallery />
+				<Process />
+				<Whyus/>
+				<Works />
+				<Cta />
+				<!-- <Faq /> -->
+				<Faq2/>
+			</div>
+		</div>
+	</body>
+<Footer/>
+</html>

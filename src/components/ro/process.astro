@@ -1,0 +1,70 @@
+---
+import Card from "./card.astro";
+
+const processes = [
+    {
+        step: 1,
+        title: "Planificare + Wireframe",
+        description:
+            "Conturăm toate paginile și secțiunile site-ului pentru a avea o idee clară despre cum va arăta site-ul.",
+        timeline: "🕓 Durată: 2 Zile",
+        image: "/process1.png", // Adăugați calea imaginii aici
+    },
+    {
+        step: 2,
+        title: "Branding + Conținut",
+        description:
+            "Personalizăm site-ul dvs. cu branding-ul și informațiile companiei.",
+        timeline: "🕓 Durată: 2-4 Zile",
+        image: "./brand.avif", // Adăugați calea imaginii aici
+    },
+    {
+        step: 3,
+        title: "Feedback + Revizuiri",
+        description:
+            "Lăsați ușor feedback-ul dvs. astfel încât să putem face rapid ajustările necesare.",
+        timeline: "🕓 Durată: 1-3 Zile",
+        image: "/reviews.webp", // Adăugați calea imaginii aici
+    },
+    {
+        step: 4,
+        title: "Conectare + Lansare",
+        description:
+            "După verificările finale de calitate, conectăm site-ul la domeniul dvs. personalizat și publicăm!",
+        timeline: "🕓 Durată: 1 Zi",
+        image: "/done1.gif", // Adăugați calea imaginii aici
+    },
+];
+---
+
+<div id="process" class="pb-16 pt-20 text-center lg:pt-32 w-full">
+    <h1
+        class="mx-auto max-w-4xl font-display text-5xl font-bold tracking-tight text-slate-900 sm:text-7xl"
+    >
+        Sistemul nostru dovedit de
+        <span class="relative whitespace-nowrap text-[#ffd700]">
+            <span class="relative">plug and play </span>
+        </span>
+        pentru site-uri web
+    </h1>
+    <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
+        Am construit suficiente site-uri pentru a ști ce funcționează și ce nu.
+    </p>
+    <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-600">
+        Nu plătiți un dezvoltator lipsit de experiență pentru a recrea roata când
+        deja avem o soluție gata făcută care este garantată să funcționeze!
+    </p>
+
+    <div class="py-4 grid grid-cols-2 gap-4">
+        {processes.map((process) => (
+            <Card
+                step={process.step}
+                title={process.title}
+                description={process.description}
+                timeline={process.timeline}
+                image={process.image} 
+            />
+        ))}
+    </div>
+
+</div>

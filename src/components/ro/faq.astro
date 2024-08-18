@@ -1,0 +1,115 @@
+---
+const faqData = [
+  {
+    id: "accordion-collapse-body-1",
+    question: "How much do websites cost?",
+    answer:
+      "Websites can vary in price based on a multitude of factors.\n\nHowever, with our proprietary plug-and-play system, we can create a high-performing sales website for your pest company for a fraction of the cost of our competitors.\n\nWith all that said, our average site price is $3,000 with no additional hidden fees.",
+  },
+  {
+    id: "accordion-collapse-body-2",
+    question: "Are there any additional fees?",
+    answer:
+      "Once the site is finished, there are no additional fees that will be charged to you by Best Pest Marketing.\n\nHowever, there is one fee that is necessary for ALL websites and that is your monthly site hosting. This is paid to the hosting company Webflow and usually ends up being $15-25/mo.",
+  },
+  {
+    id: "accordion-collapse-body-3",
+    question: "What if I don't like my site?",
+    answer:
+      "Our #1 goal is to create a website that brings in new customers for your business, but we also want to make sure that you LOVE your site.\n\nFor this reason, we have a revision process which will allow you to provide feedback on our work to ensure you like the final result.\n\nEach site comes with a 100% satisfaction guarantee! If you don't like the design, we will keep working on it until you do.",
+  },
+  {
+    id: "accordion-collapse-body-4",
+    question: "Do you help with marketing too?",
+    answer:
+      "Absolutely, we also offer SEO services, Reputation Management services and Google Ads services.\n\nMake sure to ask us about these extras when you book your intro call.",
+  },
+  {
+    id: "accordion-collapse-body-5",
+    question: "How does payment work?",
+    answer:
+      "50% payment is required before the project begins, 25% is due once the designs are finalized and the final 25% is due once development is finalized and the site has been approved by you.\n\nWe accept a variety of payment options including credit card, PayPal and wire transfers.",
+  },
+];
+---
+
+<div class="pb-16 pt-20 text-center lg:pt-32  w-full">
+  <h1
+    class="mx-auto max-w-4xl font-display text-5xl font-bold tracking-tight text-slate-900 sm:text-7xl"
+  >
+    Answers to your
+    <span class="relative whitespace-nowrap text-[#ffd700]">
+      <span class="relative"> questions </span>
+    </span>
+    <!-- for restaurants. -->
+  </h1>
+
+  <div
+    class="mt-8 sm:mt-16 overflow-hidden rounded-xl border text-black border-yellow-200"
+  >
+    <div class="overflow-x-auto">
+      <div id="accordion-collapse" data-accordion="collapse">
+        {
+          faqData.map((faq, index) => (
+            <>
+              <h2 id={`accordion-collapse-heading-${index + 1}`}>
+                <button
+                  type="button"
+                  class="flex items-center justify-between w-full p-5 font-medium text-black border border-b-0 border-yellow-200 rounded-t-xl focus:ring-4 focus:ring-yellow-200 hover:bg-yellow-100 gap-3"
+                  data-accordion-target={`#accordion-collapse-body-${index + 1}`}
+                  aria-expanded={index === 0 ? "true" : "false"}
+                  aria-controls={`accordion-collapse-body-${index + 1}`}
+                >
+                  <span>{faq.question}</span>
+                  <svg
+                    data-accordion-icon
+                    class="w-3 h-3 rotate-180 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5 5 1 1 5"
+                    />
+                  </svg>
+                </button>
+              </h2>
+              <div
+                id={`accordion-collapse-body-${index + 1}`}
+                class={
+                  index === 0
+                    ? "p-5 border border-b-0 border-yellow-200"
+                    : "hidden"
+                }
+                aria-labelledby={`accordion-collapse-heading-${index + 1}`}
+              >
+                <div class="p-5 border border-b-0 border-yellow-200">
+                  <p class="text-black">{faq.answer}</p>
+                </div>
+              </div>
+            </>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll("[data-accordion-target]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const target = document.querySelector(
+          button.getAttribute("data-accordion-target"),
+        );
+        target.classList.toggle("hidden");
+      });
+    });
+  </script>
+</div>
+
+
+

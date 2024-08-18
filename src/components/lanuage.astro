@@ -1,0 +1,53 @@
+<!-- Language Selector -->
+<div class="language-selector">
+    <label for="language" class="sr-only">Select Language</label>
+    <select id="language" name="language" onchange="changeLanguage(event)">
+        <option value="en" selected>English</option>
+        <option value="ro">Română</option>
+    </select>
+</div>
+
+<style>
+    .language-selector {
+        margin-left: auto;
+        padding: 0.5rem;
+    }
+
+    .language-selector select {
+        background-color: #333;
+        color: #fff;
+        border: 1px solid #ffd700;
+        border-radius: 4px;
+        padding: 0.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    .language-selector select:focus {
+        outline: none;
+        border-color: #ffd700;
+    }
+</style>
+
+<script is:inline>
+    function changeLanguage(event) {
+        const selectedLanguage = event.target.value;
+
+        // Store the selected language in local storage or cookies
+        localStorage.setItem("language", selectedLanguage);
+
+        // Redirect to the corresponding URL or reload the page to apply the language change
+        // This example assumes you have separate pages for each language.
+        if (selectedLanguage === "ro") {
+            window.location.href = "/"; // Romanian version URL
+        } else {
+            window.location.href = "/en"; // English version URL
+        }
+    }
+
+    // Optional: Set the initial language based on local storage or default to English
+    document.addEventListener("DOMContentLoaded", () => {
+        const savedLanguage = localStorage.getItem("language") || "en";
+        document.getElementById("language").value = savedLanguage;
+    });
+</script>
